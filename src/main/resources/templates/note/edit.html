@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Edit Note</h1>
-<p><a href="/note-list">List Note</a></p>
+<p><a href="/note-list">back to list</a></p>
 <p th:if="${mess}">
     <span th:text="${mess}"></span>
 </p>
@@ -21,6 +21,12 @@
         <tr>
             <td>Content</td>
             <td><input type="text" th:field="*{content}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>  <select th:field="*{noteType}">
+                <option th:each="p : ${notetype}" th:value="${p.id}" th:text="${p.name}"></option>
+            </select></td>
         </tr>
         <tr>
             <td><input type="submit" value="Edit Note"></td>
